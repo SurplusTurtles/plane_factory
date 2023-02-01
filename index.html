@@ -9,11 +9,33 @@
         <script type="text/javascript">
             function SetData(){
                 var target = document.getElementById('target');
-                var plane = new Plane();
-                target.textContent = plane.Summary;
+                while (target.firstChild) {
+                    target.removeChild(target.firstChild);
+                }
+                var numberCountries = document.getElementById('numCountries').value;
+                var numberPlanes = document.getElementById('numPlanes').value;
+                var countries = [];
+
+                for (var i = 0; i < numberCountries; i++) {
+                    var country = new Country();
+                    countries.push(country.Name);
+                }
+
+                for (var j = 0; j < numberPlanes; j++){
+                    var plane = new Plane(countries)
+                    var plane_para = document.createElement('p');
+                    plane_para.textContent = plane.Summary;
+                    target.appendChild(plane_para);
+                }
             }
         </script>
+        <label for="numCountries">Number of Countries</label>
+        <input id="numCountries" type="number"/>
+        <label for="numPlanes">Number of Planes</label>
+        <input id="numPlanes" type="number"/>
+
         <button onclick="SetData()">Make a Plane</button>
-        <p id="target"></p>
+
+        <span id="target"></span>
     </body>
 </html>
