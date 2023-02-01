@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Plane Generator</title>
+    </head>
+    <body>
+        <script type="text/javascript" src="js/data.js"></script>
+        <script type="text/javascript" src="js/utilities.js"></script>
+        <script type="text/javascript" src="js/planes.js"></script>
+        <script type="text/javascript">
+            function SetData(){
+                var target = document.getElementById('target');
+                var plane = new Plane();
+                target.textContent = plane.Summary;
+            }
+        </script>
+        <button onclick="SetData()">Make a Plane</button>
+        <p id="target"></p>
+    </body>
+</html>
