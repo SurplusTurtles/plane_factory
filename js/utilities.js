@@ -26,7 +26,7 @@ function WeightedRoll(sourceArray) {
         if (!Number.isInteger(entryWeight)) {
             throw new Error("Weight supplied was not an integer");
         }
-        // The weight map entry includes the source index, the lower bound for a winning row, and the upper bound for a winning roll
+        // The weight map entry includes the source index, the lower bound for a winning roll, and the upper bound for a winning roll
         WeightMap.push([sourceIndex, boundary, boundary -1 + entryWeight]);
         // Increase the lower boundary for the next entry
         boundary += entryWeight;

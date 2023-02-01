@@ -7,13 +7,7 @@ class Plane {
     }
 
     constructor(){
-        this.setRole();
-        this.setSourceCountry();
-    }
-    setRole() {
         this.role = UnweightedRoll(CombatRole);
-    }
-    setSourceCountry() {
         this.sourceCountry = WeightedRoll(SourceCountry)[1];
     }
 }
